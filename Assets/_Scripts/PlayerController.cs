@@ -14,6 +14,8 @@ public class PlayerController : SteerableBehaviour, IShooter, IDamageable
 
     private int lifes;
 
+    public AudioClip shootSFX;
+
     private void Start()
     {
         lifes = 10;
@@ -23,6 +25,7 @@ public class PlayerController : SteerableBehaviour, IShooter, IDamageable
     public void Shoot()
     {
         if (Time.time - _lastShoot > shootDelay) {
+            AudioManager.PlaySFX(shootSFX);
             _lastShoot = Time.time;
             Instantiate(shoot, gun.position, Quaternion.identity);
         }
@@ -60,7 +63,7 @@ public class PlayerController : SteerableBehaviour, IShooter, IDamageable
     }    
 
     public void OnTriggerEnter2D(Collider2D collider) {
-        if (collider.CompareTag("Enemy")) {
+        if (!collider.CompareTag("Shoot")) {
             Destroy(collider.gameObject);
             TakeDamage();
         }

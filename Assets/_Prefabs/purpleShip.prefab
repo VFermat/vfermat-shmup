@@ -263,8 +263,10 @@ GameObject:
   - component: {fileID: 5392258280956293684}
   - component: {fileID: 5392258280956293675}
   - component: {fileID: 5392258280956293674}
-  - component: {fileID: 5392258280956293673}
   - component: {fileID: 5392258280956293687}
+  - component: {fileID: 3683008601868846637}
+  - component: {fileID: -721852316057266252}
+  - component: {fileID: -2502720038671198567}
   m_Layer: 0
   m_Name: purpleShip
   m_TagString: Enemy
@@ -415,19 +417,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2300448, y: 0.91701514}
   m_EdgeRadius: 0
---- !u!114 &5392258280956293673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5392258280956293672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 547327bba79e348d9b8c03790df42686, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  td: {fileID: 11400000, guid: 639bd6493328a45a0ae68803337aca32, type: 2}
 --- !u!95 &5392258280956293687
 Animator:
   serializedVersion: 3
@@ -447,6 +436,45 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3683008601868846637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5392258280956293672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 547327bba79e348d9b8c03790df42686, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  td: {fileID: 11400000, guid: 388701daaa55c334e9f5368eb44c325e, type: 2}
+  tiro: {fileID: 4776763986943332877, guid: 2f91f5698a0df4170a8e46d64e9bf1af, type: 3}
+--- !u!114 &-721852316057266252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5392258280956293672}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b26a549be9b1342e2952fb83155fbd7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootDelay: 1
+--- !u!114 &-2502720038671198567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5392258280956293672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa9148be9ec254281983125f20567b21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5392258281092493302
 GameObject:
   m_ObjectHideFlags: 0

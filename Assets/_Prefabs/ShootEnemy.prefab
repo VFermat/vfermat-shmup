@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 1701307797977810985}
   - component: {fileID: 6306619764533846514}
   - component: {fileID: 8864708573040675507}
-  - component: {fileID: 2767457415466216980}
+  - component: {fileID: -5171906912232860476}
   m_Layer: 0
-  m_Name: Shoot
-  m_TagString: Shoot
+  m_Name: ShootEnemy
+  m_TagString: EnemyShot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3cd2e026cbb374f35bbe79ac4d060351, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d365b02ace37a4a92aac512797d71f08, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -122,7 +122,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -131,7 +131,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2767457415466216980
+--- !u!114 &-5171906912232860476
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4776763986943332877}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ede4c7e8f1f0e4833af18b11e6c147c6, type: 3}
+  m_Script: {fileID: 11500000, guid: 019bf2f776f8143939451e27f8a9206b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   td: {fileID: 11400000, guid: f5fbf7a63461846a794a69f13361414b, type: 2}

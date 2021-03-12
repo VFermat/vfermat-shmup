@@ -2,33 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AsteroidBehaviour : MonoBehaviour, IDamageable
+public class AsteroidBehaviour : SteerableBehaviour, IShooter, IDamageable
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+
+    public GameObject tiro;
+
+    public void Shoot() {
+        Instantiate(tiro, transform.position, Quaternion.identity);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void TakeDamage()
-    {
+    public void TakeDamage() {
         Die();
     }
 
-    public void Die()
-    {
+    public void Die() {
         Destroy(gameObject);
     }
 
-    public void OnTriggerEnter2D(Collider2D collider) {
-        if (collider.CompareTag("Shoot")) {
-            TakeDamage();
-        }
+    float angle = 0;
+
+    private void FixedUpdate() {
+        angle += 0.1f;
+        Mathf.Clamp(angle, 0.0f, 2.0f * Mathf.PI);
+        float x = Mathf.Sin(angle);
+        float y = Mathf.Cos(angle);
+
+        Thrust(x, y);
     }
 }
