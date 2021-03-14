@@ -1,25 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : SteerableBehaviour, IShooter, IDamageable
 {
   
     Animator animator;
 
+    private GameManager gm;
+
     public GameObject shoot;
     public Transform gun;
     public float shootDelay = 1.0f;
     public float _lastShoot = 0.0f;
 
-    private int lifes;
-
     public AudioClip shootSFX;
 
     private void Start()
     {
-        lifes = 10;
         animator = GetComponent<Animator>();
+        gm = GameManager.GetInstance();
     }
 
     public void Shoot()
@@ -33,14 +34,16 @@ public class PlayerController : SteerableBehaviour, IShooter, IDamageable
 
     public void TakeDamage()
     {
-        lifes--;
-        if (lifes <= 0) {
+        gm.playerLifes--;
+        if (gm.playerLifes <= 0) {
             Die();
         }
     }
 
     public void Die()
     {
+        gm.ChangeState(GameManager.GameState.ENDGAME);
+        SceneManager.LoadScene("GameoverScene", LoadSceneMode.Single);
         Destroy(gameObject);
     }
 
@@ -65,6 +68,7 @@ public class PlayerController : SteerableBehaviour, IShooter, IDamageable
     public void OnTriggerEnter2D(Collider2D collider) {
         if (!collider.CompareTag("Shoot")) {
             Destroy(collider.gameObject);
+            gm.score++;
             TakeDamage();
         }
     }
