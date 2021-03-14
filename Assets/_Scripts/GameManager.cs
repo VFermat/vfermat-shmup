@@ -15,6 +15,7 @@ public class GameManager
     public GameState gameState { get; private set; }
     public GameState lastGameState { get; private set; }
 
+
     public void ChangeState(GameState nextState)
     {
         if (nextState == GameState.GAME) Reset();
@@ -44,8 +45,8 @@ public class GameManager
         playerLifes = 10;
         score = 0;
         highScore = 0;
-        gameState = GameState.MENU;
-        SceneManager.LoadScene("GameoverScene", LoadSceneMode.Single);
+        gameState = GameState.GAME;
+        SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
     }
 
     public void Reset()

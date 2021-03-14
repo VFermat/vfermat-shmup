@@ -33,7 +33,7 @@ public class UI_SelectLevel : MonoBehaviour
         LoadGame();
     }
 
-    private void LoadGame() {
+    public void LoadGame() {
         gm.ChangeState(GameManager.GameState.GAME);
         SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
     }

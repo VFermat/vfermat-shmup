@@ -12,6 +12,7 @@ public class UI_MainMenu : MonoBehaviour
     {
         gm = GameManager.GetInstance();
     }
+
     public void Comecar()
     {
         gm.ChangeState(GameManager.GameState.START);

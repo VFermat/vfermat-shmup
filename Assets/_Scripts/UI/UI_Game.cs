@@ -10,7 +10,6 @@ public class UI_Game : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("Teste Start");
         gm = GameManager.GetInstance();
         texts = GetComponentsInChildren<Text>();
         Debug.Log(texts[0].name);
@@ -18,7 +17,6 @@ public class UI_Game : MonoBehaviour
     public void Update()
     {
         foreach (Text text in texts) {
-            Debug.Log("Teste");
             if (text.name == "PlayerLife") {
                 text.text = $"\tVidas: {gm.playerLifes}";
             } else if (text.name == "PlayerScore") {
