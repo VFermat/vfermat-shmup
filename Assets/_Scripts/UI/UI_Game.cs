@@ -23,6 +23,8 @@ public class UI_Game : MonoBehaviour
                 text.text = $"\tVidas: {gm.playerLifes}";
             } else if (text.name == "PlayerScore") {
                 text.text = $"Pontos: {gm.score}\t";
+            } else if (text.name == "HighScore") {
+                text.text = $"HighScore: {gm.highScore}";
             }
         }
     }
