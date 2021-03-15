@@ -10,7 +10,7 @@ public class GameManager
     public int playerLifes;
     public int score;
     public int[] highScores = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-    public string[] highScorePlayers = new string[10] {"", "", "", "", "", "", "", "", "", ""};
+    public string[] highScorePlayers = new string[10] {"Jane Doe", "Jane Doe", "Jane Doe", "Jane Doe", "Jane Doe", "Jane Doe", "Jane Doe", "Jane Doe", "Jane Doe", "Jane Doe"};
     private static GameManager _instance;
 
     // Game State
