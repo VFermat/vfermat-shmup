@@ -12,7 +12,7 @@ public class PlayerController : SteerableBehaviour, IShooter, IDamageable
 
     public GameObject shoot;
     public Transform gun;
-    public float shootDelay = 1.0f;
+    public float shootDelay = 0.5f;
     public float _lastShoot = 0.0f;
 
     public AudioClip shootSFX;
@@ -50,9 +50,8 @@ public class PlayerController : SteerableBehaviour, IShooter, IDamageable
     void FixedUpdate()
     {
         float yInput = Input.GetAxis("Vertical");
-        float xInput = Input.GetAxis("Horizontal");
-        Thrust(xInput, yInput);
-        if (yInput != 0 || xInput != 0)
+        Thrust(0, yInput);
+        if (yInput != 0)
         {
             animator.SetFloat("Velocity", 1.0f);
         }

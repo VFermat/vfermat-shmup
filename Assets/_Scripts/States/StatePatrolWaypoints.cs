@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class StatePatrolWaypoints : State {
+
   public Transform[] waypoints;   
   SteerableBehaviour steerable;
+  IShooter shooter;
 
-
- 
   public override void Awake() {
       base.Awake();
       // Configure a transição para outro estado aqui.
       steerable = GetComponent<SteerableBehaviour>();
-
+      shooter = steerable as IShooter;
+      if(shooter == null)
+      {
+        throw new MissingComponentException("Este GameObject não implementa IShooter");
+      }
   }
 
   public void Start() {
@@ -21,11 +25,12 @@ public class StatePatrolWaypoints : State {
   }
 
   public override void Update() {
-      if(Vector3.Distance(transform.position, waypoints[1].position) > .1f) {
-        Vector3 direction = waypoints[1].position - transform.position;
+      if((waypoints[1].position.y - transform.position.y) > .1f) {
+        Vector3 direction = new Vector3(0, waypoints[1].position.y - transform.position.y);
         direction.Normalize();
         steerable.Thrust(direction.x, direction.y);
       } else {
+        shooter.Shoot();
         waypoints[1].position = GameObject.FindWithTag("Player").transform.position;
       }
   }

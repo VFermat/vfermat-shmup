@@ -48,8 +48,8 @@ public class GameManager
         playerLifes = 10;
         score = 0;
         playerName = "Jane Doe";
-        gameState = GameState.MENU;
-        SceneManager.LoadScene("RankScene", LoadSceneMode.Single);
+        gameState = GameState.GAME;
+        SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
     }
 
     public void Reset()

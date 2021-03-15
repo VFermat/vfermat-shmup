@@ -6,9 +6,16 @@ public class FollowerBehaviour : SteerableBehaviour, IShooter, IDamageable
 {
 
     public GameObject tiro;
+    public Transform gun;
+
+    public float shootDelay = 0.5f;
+    private float _lastShootTimestamp = 0.0f;
 
     public void Shoot() {
-        Instantiate(tiro, transform.position, Quaternion.identity);
+        if (Time.time - _lastShootTimestamp > shootDelay) {
+            _lastShootTimestamp = Time.time;
+            Instantiate(tiro, gun.position, Quaternion.identity);
+        }
     }
 
     public void TakeDamage() {
