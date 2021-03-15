@@ -4,18 +4,18 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class UI_MainMenu : MonoBehaviour
+public class UI_Start : MonoBehaviour
 {
     GameManager gm;
 
     private void OnEnable()
     {
+        Debug.Log("Debugginnggg");
         gm = GameManager.GetInstance();
     }
 
-    public void Comecar()
-    {
-        gm.ChangeState(GameManager.GameState.START);
-        SceneManager.LoadScene("StartScene", LoadSceneMode.Single);
+    public void LoadGame() {
+        gm.ChangeState(GameManager.GameState.GAME);
+        SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
     }
 }

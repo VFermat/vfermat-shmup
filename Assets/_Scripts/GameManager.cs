@@ -5,9 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class GameManager
 {
+
+    public string playerName;
     public int playerLifes;
     public int score;
-    public int highScore;
+    public int[] highScores = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    public string[] highScorePlayers = new string[10] {"", "", "", "", "", "", "", "", "", ""};
     private static GameManager _instance;
 
     // Game State
@@ -44,15 +47,29 @@ public class GameManager
     {
         playerLifes = 10;
         score = 0;
-        highScore = 0;
-        gameState = GameState.GAME;
-        SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
+        playerName = "Jane Doe";
+        gameState = GameState.MENU;
+        SceneManager.LoadScene("MenuScene", LoadSceneMode.Single);
     }
 
     public void Reset()
     {
-        if (score > highScore) highScore = score;
+        UpdateHighScore();
+        playerName = "Jane Doe";
         playerLifes = 10;
         score = 0;
     }
-}
+
+    public void UpdateHighScore() {
+        int i;
+        for (i = 0; i <= 9; i++) {
+            if (score > highScores[i]) break;
+        }
+        for (int j = 9; j > i; j--) {
+            highScorePlayers[j] = highScorePlayers[j-1];
+            highScores[j] = highScores[j-1];
+        }
+        highScorePlayers[i] = playerName;
+        highScores[i] = score;
+    }
+} 

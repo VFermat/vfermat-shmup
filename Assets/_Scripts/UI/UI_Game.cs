@@ -22,7 +22,7 @@ public class UI_Game : MonoBehaviour
             } else if (text.name == "PlayerScore") {
                 text.text = $"Pontos: {gm.score}\t";
             } else if (text.name == "HighScore") {
-                text.text = $"HighScore: {gm.highScore}";
+                text.text = $"HighScore: {gm.highScores[0]}";
             }
         }
     }
