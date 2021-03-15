@@ -12,7 +12,6 @@ public class UI_Game : MonoBehaviour
     {
         gm = GameManager.GetInstance();
         texts = GetComponentsInChildren<Text>();
-        Debug.Log(texts[0].name);
     }
     public void Update()
     {

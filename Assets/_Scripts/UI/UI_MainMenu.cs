@@ -8,7 +8,7 @@ public class UI_MainMenu : MonoBehaviour
 {
     GameManager gm;
 
-    private void OnEnable()
+    private void Start()
     {
         gm = GameManager.GetInstance();
     }

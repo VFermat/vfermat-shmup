@@ -8,7 +8,7 @@ public class UI_Start : MonoBehaviour
 {
     GameManager gm;
 
-    private void OnEnable()
+    private void Start()
     {
         Debug.Log("Debugginnggg");
         gm = GameManager.GetInstance();

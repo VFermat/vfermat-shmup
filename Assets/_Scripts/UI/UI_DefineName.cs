@@ -9,7 +9,7 @@ public class UI_DefineName : MonoBehaviour
     GameManager gm;
     InputField playerName;
 
-    private void OnEnable()
+    private void Start()
     {
         gm = GameManager.GetInstance();
         playerName = gameObject.GetComponentInChildren<InputField>();
