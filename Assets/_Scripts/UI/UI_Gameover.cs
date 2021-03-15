@@ -8,7 +8,7 @@ public class UI_Gameover : MonoBehaviour
 {
     GameManager gm;
 
-    private void OnEnable()
+    private void Start()
     {
         gm = GameManager.GetInstance();
     }
@@ -18,5 +18,11 @@ public class UI_Gameover : MonoBehaviour
         gm.ChangeState(GameManager.GameState.MENU);
         gm.Reset();
         SceneManager.LoadScene("MenuScene", LoadSceneMode.Single);
+    }
+    public void Rank()
+    {
+        gm.ChangeState(GameManager.GameState.MENU);
+        gm.Reset();
+        SceneManager.LoadScene("RankScene", LoadSceneMode.Single);
     }
 }

@@ -12,7 +12,6 @@ public class UI_Game : MonoBehaviour
     {
         gm = GameManager.GetInstance();
         texts = GetComponentsInChildren<Text>();
-        Debug.Log(texts[0].name);
     }
     public void Update()
     {
@@ -22,7 +21,7 @@ public class UI_Game : MonoBehaviour
             } else if (text.name == "PlayerScore") {
                 text.text = $"Pontos: {gm.score}\t";
             } else if (text.name == "HighScore") {
-                text.text = $"HighScore: {gm.highScore}";
+                text.text = $"HighScore: {gm.highScores[0]}";
             }
         }
     }

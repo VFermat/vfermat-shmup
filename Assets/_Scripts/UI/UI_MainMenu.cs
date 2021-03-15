@@ -8,7 +8,7 @@ public class UI_MainMenu : MonoBehaviour
 {
     GameManager gm;
 
-    private void OnEnable()
+    private void Start()
     {
         gm = GameManager.GetInstance();
     }
@@ -17,6 +17,5 @@ public class UI_MainMenu : MonoBehaviour
     {
         gm.ChangeState(GameManager.GameState.START);
         SceneManager.LoadScene("StartScene", LoadSceneMode.Single);
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName("StartScene"));
     }
 }
