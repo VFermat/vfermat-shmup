@@ -21,17 +21,17 @@ public class StatePatrolWaypoints : State {
 
   public void Start() {
       waypoints[0].position = transform.position;
-      waypoints[1].position = GameObject.FindWithTag("Player").transform.position;
+      waypoints[1].position = new Vector3(transform.position.x, GameObject.FindWithTag("Player").transform.position.y);
   }
 
   public override void Update() {
-      if((waypoints[1].position.y - transform.position.y) > .1f) {
+      if((waypoints[1].position.y - transform.position.y) > .1f || (waypoints[1].position.y - transform.position.y) < -0.1f ) {
         Vector3 direction = waypoints[1].position - transform.position;
         direction.Normalize();
         steerable.Thrust(0, direction.y);
       } else {
         shooter.Shoot();
-        waypoints[1].position = GameObject.FindWithTag("Player").transform.position;
+        waypoints[1].position = new Vector3(transform.position.x, GameObject.FindWithTag("Player").transform.position.y);
       }
   }
  

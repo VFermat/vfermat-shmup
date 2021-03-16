@@ -9,7 +9,7 @@ public class GameManager
     public string playerName;
     public int playerLifes;
     public int score;
-    public int[] highScores = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    public int[] highScores = new int[10] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
     public string[] highScorePlayers = new string[10] {"Jane Doe", "Jane Doe", "Jane Doe", "Jane Doe", "Jane Doe", "Jane Doe", "Jane Doe", "Jane Doe", "Jane Doe", "Jane Doe"};
     private static GameManager _instance;
 
@@ -70,7 +70,7 @@ public class GameManager
             highScorePlayers[j] = highScorePlayers[j-1];
             highScores[j] = highScores[j-1];
         }
-        highScorePlayers[i-1] = playerName;
-        highScores[i-1] = score;
+        highScorePlayers[i] = playerName;
+        highScores[i] = score;
     }
 } 
