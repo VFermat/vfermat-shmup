@@ -26,9 +26,9 @@ public class StatePatrolWaypoints : State {
 
   public override void Update() {
       if((waypoints[1].position.y - transform.position.y) > .1f) {
-        Vector3 direction = new Vector3(0, waypoints[1].position.y - transform.position.y);
+        Vector3 direction = waypoints[1].position - transform.position;
         direction.Normalize();
-        steerable.Thrust(direction.x, direction.y);
+        steerable.Thrust(0, direction.y);
       } else {
         shooter.Shoot();
         waypoints[1].position = GameObject.FindWithTag("Player").transform.position;

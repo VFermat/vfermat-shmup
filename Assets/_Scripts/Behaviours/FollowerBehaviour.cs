@@ -8,7 +8,7 @@ public class FollowerBehaviour : SteerableBehaviour, IShooter, IDamageable
     public GameObject tiro;
     public Transform gun;
 
-    private float shootDelay = 0.5f;
+    private float shootDelay = 1f;
     private float _lastShootTimestamp = 0.0f;
     private GameManager gm;
     private void Start()
