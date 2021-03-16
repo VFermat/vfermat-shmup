@@ -64,11 +64,13 @@ public class GameManager
         for (i = 0; i <= 9; i++) {
             if (score > highScores[i]) break;
         }
-        for (int j = 9; j >= i; j--) {
-            highScorePlayers[j] = highScorePlayers[j-1];
-            highScores[j] = highScores[j-1];
+        if (i < 10) {
+            for (int j = 9; j > i; j--) {
+                highScorePlayers[j] = highScorePlayers[j-1];
+                highScores[j] = highScores[j-1];
+            }
+            highScorePlayers[i] = playerName;
+            highScores[i] = score;
         }
-        highScorePlayers[i] = playerName;
-        highScores[i] = score;
     }
 } 

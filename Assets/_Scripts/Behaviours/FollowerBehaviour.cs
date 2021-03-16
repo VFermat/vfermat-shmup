@@ -32,8 +32,6 @@ public class FollowerBehaviour : SteerableBehaviour, IShooter, IDamageable
         Destroy(gameObject);
     }
 
-    float angle = 0;
-
     private void FixedUpdate() {
     }
 }
