@@ -21,7 +21,6 @@ public class GameManager
 
     public void ChangeState(GameState nextState)
     {
-        if (nextState == GameState.GAME) Reset();
         lastGameState = gameState;
         gameState = nextState;
     }
