@@ -7,6 +7,13 @@ public class VolantBehaviour : SteerableBehaviour, IShooter, IDamageable
 
     public GameObject tiro;
 
+    private GameManager gm;
+
+    private void Start()
+    {
+        gm = GameManager.GetInstance();
+    }
+
     public void Shoot() {
         Instantiate(tiro, transform.position, Quaternion.identity);
     }
@@ -16,6 +23,7 @@ public class VolantBehaviour : SteerableBehaviour, IShooter, IDamageable
     }
 
     public void Die() {
+        gm.score += 5;
         Destroy(gameObject);
     }
 

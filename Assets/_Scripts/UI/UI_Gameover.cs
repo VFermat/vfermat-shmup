@@ -6,11 +6,17 @@ using UnityEngine.UI;
 
 public class UI_Gameover : MonoBehaviour
 {
-    GameManager gm;
+    private GameManager gm;
+    public Text text;
 
     private void Start()
     {
         gm = GameManager.GetInstance();
+        gm.Reset();
+        text = GetComponentsInChildren<Text>()[0];
+        if (gm.playerLifes > 0) {
+            text.text = "Parabéns, você venceu!";
+        }
     }
 
     public void Menu()

@@ -6,9 +6,21 @@ public class FollowerBehaviour : SteerableBehaviour, IShooter, IDamageable
 {
 
     public GameObject tiro;
+    public Transform gun;
+
+    private float shootDelay = 1f;
+    private float _lastShootTimestamp = 0.0f;
+    private GameManager gm;
+    private void Start()
+    {
+        gm = GameManager.GetInstance();
+    }
 
     public void Shoot() {
-        Instantiate(tiro, transform.position, Quaternion.identity);
+        if (Time.time - _lastShootTimestamp > shootDelay) {
+            _lastShootTimestamp = Time.time;
+            Instantiate(tiro, gun.position, Quaternion.identity);
+        }
     }
 
     public void TakeDamage() {
@@ -16,10 +28,9 @@ public class FollowerBehaviour : SteerableBehaviour, IShooter, IDamageable
     }
 
     public void Die() {
+        gm.score += 3;
         Destroy(gameObject);
     }
-
-    float angle = 0;
 
     private void FixedUpdate() {
     }

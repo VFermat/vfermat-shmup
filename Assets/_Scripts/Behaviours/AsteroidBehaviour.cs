@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AsteroidBehaviour : SteerableBehaviour, IShooter, IDamageable
+public class AsteroidBehaviour : SteerableBehaviour, IDamageable
 {
 
-    public GameObject tiro;
-
-    public void Shoot() {
-        Instantiate(tiro, transform.position, Quaternion.identity);
+    private GameManager gm;
+    private void Start()
+    {
+        gm = GameManager.GetInstance();
     }
 
     public void TakeDamage() {
@@ -16,17 +16,10 @@ public class AsteroidBehaviour : SteerableBehaviour, IShooter, IDamageable
     }
 
     public void Die() {
+        gm.score++;
         Destroy(gameObject);
     }
 
-    float angle = 0;
-
     private void FixedUpdate() {
-        angle += 0.1f;
-        Mathf.Clamp(angle, 0.0f, 2.0f * Mathf.PI);
-        float x = Mathf.Sin(angle);
-        float y = Mathf.Cos(angle);
-
-        Thrust(x, y);
     }
 }
