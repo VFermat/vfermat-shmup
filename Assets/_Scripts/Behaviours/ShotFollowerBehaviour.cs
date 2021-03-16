@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShotEnemyBehaviour : SteerableBehaviour
+public class ShotFollowerBehaviour : SteerableBehaviour
 {
 
   private Vector3 direction;
 
   private void OnTriggerEnter2D(Collider2D collision)
   {
-      if (collision.CompareTag("Enemy")) return;
+      if (collision.CompareTag("Enemy") || collision.CompareTag("EnemyShot")) return;
 
       IDamageable damageable = collision.gameObject.GetComponent(typeof(IDamageable)) as IDamageable;
       if (!(damageable is null))
@@ -21,13 +21,12 @@ public class ShotEnemyBehaviour : SteerableBehaviour
 
   void Start()
   {
-      Vector3 posPlayer = GameObject.FindWithTag("Player").transform.position;
-      direction = (posPlayer - transform.position).normalized;
+
   }
 
   void Update()
   {
-      Thrust(direction.x, direction.y);
+      Thrust(-1, 0);
   }
 
   private void OnBecameInvisible()

@@ -8,8 +8,12 @@ public class FollowerBehaviour : SteerableBehaviour, IShooter, IDamageable
     public GameObject tiro;
     public Transform gun;
 
-    public float shootDelay = 0.5f;
+    private float shootDelay = 0.5f;
     private float _lastShootTimestamp = 0.0f;
+    private void Start()
+    {
+        gm = GameManager.GetInstance();
+    }
 
     public void Shoot() {
         if (Time.time - _lastShootTimestamp > shootDelay) {
@@ -23,6 +27,7 @@ public class FollowerBehaviour : SteerableBehaviour, IShooter, IDamageable
     }
 
     public void Die() {
+        gm.score += 3;
         Destroy(gameObject);
     }
 
