@@ -542,6 +542,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Seguidor (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 146423498068652320, guid: 2d9235ba5d5844faa93c724765b66011,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 9076545296394078034, guid: 2d9235ba5d5844faa93c724765b66011,
         type: 3}
       propertyPath: m_RootOrder
@@ -616,6 +621,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Seguidor (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 146423498068652320, guid: 2d9235ba5d5844faa93c724765b66011,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 9076545296394078034, guid: 2d9235ba5d5844faa93c724765b66011,
         type: 3}
@@ -874,6 +884,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Seguidor
+      objectReference: {fileID: 0}
+    - target: {fileID: 146423498068652320, guid: 2d9235ba5d5844faa93c724765b66011,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 9076545296394078034, guid: 2d9235ba5d5844faa93c724765b66011,
         type: 3}
