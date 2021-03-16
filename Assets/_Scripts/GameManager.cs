@@ -48,8 +48,8 @@ public class GameManager
         playerLifes = 10;
         score = 0;
         playerName = "Jane Doe";
-        gameState = GameState.GAME;
-        SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
+        gameState = GameState.MENU;
+        SceneManager.LoadScene("MenuScene", LoadSceneMode.Single);
     }
 
     public void Reset()
@@ -65,7 +65,6 @@ public class GameManager
         for (i = 0; i <= 9; i++) {
             if (score > highScores[i]) break;
         }
-        Debug.Log(1);
         for (int j = 9; j >= i; j--) {
             highScorePlayers[j] = highScorePlayers[j-1];
             highScores[j] = highScores[j-1];
