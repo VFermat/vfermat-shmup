@@ -10,6 +10,7 @@ public class FollowerBehaviour : SteerableBehaviour, IShooter, IDamageable
 
     private float shootDelay = 0.5f;
     private float _lastShootTimestamp = 0.0f;
+    private GameManager gm;
     private void Start()
     {
         gm = GameManager.GetInstance();
