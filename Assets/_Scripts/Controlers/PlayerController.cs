@@ -47,14 +47,6 @@ public class PlayerController : SteerableBehaviour, IShooter, IDamageable
         Destroy(gameObject);
     }
 
-    void Update() {
-        GameObject[] objs = GameObject.FindGameObjectsWithTag("Enemy");
-        if (objs.Length <= 0) {
-            gm.ChangeState(GameManager.GameState.ENDGAME);
-            SceneManager.LoadScene("GameoverScene", LoadSceneMode.Single);
-        }
-    }
-
     void FixedUpdate()
     {
         float yInput = Input.GetAxis("Vertical");
